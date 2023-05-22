@@ -1,0 +1,56 @@
+{% extends 'base.html' %} {% block content %} {% load static %}
+<section class="content">
+    <section class="post_form">
+        <header>
+            <img src="{% static 'img/twitter.png' %}" alt="logo">
+            <h1>Home</h1>
+        </header>
+        <form action="/" method="post" enctype="multipart/form-data">
+            {% csrf_token %}
+            <input class='name' type="text" name="name" required placeholder="Max">
+            <textarea class="body" name="body" id="" cols="30" rows="10" required> Tell us something!</textarea>
+            <div class="image">
+                <input name="image" type='file'>
+                <input class='submit' type="submit" value="Tweet">
+            </div>
+        </form>
+    </section>
+
+    <section class="posts">
+        <ul>
+            {% for post in posts %}
+            <li>
+                <img src="{% static 'img/userimg.png' %}" alt="">
+                <div class="post-body">
+                    <p class="name">{{post.name}}</p>
+                    <p class="time">{{post.created_at}}</p>
+                    <p class="body">{{post.body}}</p>
+
+                    {% if post.image.url %}
+                    <img src={{post.image.url}} alt="image" id="post-image">
+                    {% endif %}
+                    <div class='like'>
+                        <a href="like/{{post.id}}/">
+                            <img src="{% static 'img/heart.png' %}" alt="like">
+                            <p>{{post.like}}</p>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="menu">
+                    <img class="js-menu-icon" src="{% static 'img/menuimg.jpeg' %}" alt="">
+                    <div class="menulist" style="display: none;">
+                        <a href="/delete/{{ post.id }}">Delete</a>
+                        <a href="edit/{{post.id}}/">Edit</a>
+                    </div>
+                </div>
+            </li>
+            {% endfor %}
+        </ul>
+    </section>
+</section>
+<script src="https://code.jquery.com/jquery-3.6.4.js" integrity="sha256-a9jBBRygX1Bh5lt8GZjXDzyOB+bWve9EiO7tROUtj/E="
+    crossorigin="anonymous"></script>
+<script src="{% static 'js/toggle.js' %}"></script>
+
+{% endblock %}

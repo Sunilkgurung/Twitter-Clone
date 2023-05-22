@@ -1,0 +1,134 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+.content{
+    width: 600px;
+    height: 100%;
+    margin: 0 auto ;
+}
+h1, h3{
+    text-align: center;
+}
+
+/* form */
+.post_form{
+    padding: 20px 40px;
+    border: 1px solid gray;
+}
+
+.post_form input{
+    width: 70%;
+    margin: 10px 0;
+    padding: 10px;
+    outline: none;
+}
+input.submit{
+    background-color: rgb(60, 158, 153);
+   border: 0;
+   padding: 10px 20px;
+   border-radius: 10px;
+   width: 40%;
+}
+.post_form textarea{
+   width: 70%;
+   padding: 10px;
+   resize: none;
+   outline: none;
+}
+
+/* List items */
+
+.posts ul{
+    padding: 0;
+
+}
+
+.posts li{
+    list-style: none;
+    display: flex;
+    border: 1px solid gray;
+    padding: 20px 40px;
+    align-items: flex-start;
+}
+
+.posts li img{
+    flex-basis: 15%;
+    width: 15%;
+}
+.posts li .post-body{
+    flex-basis: 85%;
+    padding-left: 10px;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.post-body .name{
+    font-weight: bold;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 20px;
+}
+
+.post-body .time{
+    color: gray;
+    padding-bottom: 10px;
+}
+
+.menulist{
+    display: block;
+}
+.menulist a{
+    text-decoration: none;
+}
+.menu{
+    flex-basis: 10%;
+}
+
+#post-image {
+    width: 100%;
+}
+
+.menu img.js-menu-icon {
+    width: 2rem;
+}
+
+.post-body .like a {
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+    text-decoration: none;
+    color: #000;
+}
+
+.post-body .like a img {
+    width: 0.7rem;
+}
+
+header {
+    display: flex;
+    gap: 2rem;
+    align-items: center;
+    padding: 1rem 2rem;
+    border-bottom: 1px solid #000;
+}
+
+header img {
+    width: 3rem;
+}
+
+.btns {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.btns a {
+    text-decoration: none;
+    padding: 10px 20px;
+    background-color: red;
+    border: 0;
+    border-radius: 10px;
+    color: #fff;
+}
+
